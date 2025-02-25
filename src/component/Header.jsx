@@ -2,8 +2,10 @@ import React from 'react'
 import logo from '../assets/images/logo.webp'
 import styled from 'styled-components'
 import { Link, NavLink } from 'react-router-dom'
-import { FaSearch, FaBars } from 'react-icons/fa'
+import { FaSearch, FaBars, FaUser } from 'react-icons/fa'
 import { Button } from './Button/Button'
+import { auth } from './Services/initializeApp'
+import { useState, useEffect } from 'react'
 
 const MainBox = styled.div`
   display: flex;
@@ -52,7 +54,13 @@ const RightBox = styled.div`
 `
 
 const Header = (props) => {
-  const { id } = props
+    const { id } = props
+  const [user, setUser] = useState(null)
+  useEffect(() => {
+    auth.onAuthStateChanged((user) => {
+      setUser(user)
+    })
+  }, [])
   return (
     <MainBox>
       <Link to="/">
@@ -75,7 +83,9 @@ const Header = (props) => {
           }
         }
       }>
-        <StyledNavLink id={id} to="/">Home</StyledNavLink>
+        {
+          user ? <StyledNavLink id={id} to="/profile"><div className='account'><FaUser size={16} /></div></StyledNavLink> : <StyledNavLink id={id} to="/login"><div className='account'><Button location="/login" value="login" /></div></StyledNavLink>
+        }
         <StyledNavLink id={id} to="/blog">Blog</StyledNavLink>
         <StyledNavLink id={id} to="/about">About</StyledNavLink>
         <FaSearch size={16} />

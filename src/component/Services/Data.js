@@ -7,7 +7,6 @@ import blog6 from '../../assets/images/blog-6.webp'
 import blog7 from '../../assets/images/blog-7.webp'
 import blog8 from '../../assets/images/blog-8.webp'
 import blog9 from '../../assets/images/blog-9.webp'
-import Card from '../Card'
 
 function Data( start, end) {
     const cardData = [

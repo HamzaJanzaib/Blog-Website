@@ -5,13 +5,18 @@ import Routing from './component/Routing'
 import Footer from './component/Footer'
 
 
+
 function App() {
   return (
     <Router>
       <div>
-        <Header />
+        {
+           window.location.pathname === '/login' || window.location.pathname === '/signup' ? null : <Header />
+        }
         <Routing />
-        <Footer />
+        {
+          window.location.pathname === '/login' || window.location.pathname === '/signup' ? null : <Footer />
+        }
       </div>
     </Router>
   )
