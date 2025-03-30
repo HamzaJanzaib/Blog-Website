@@ -6,6 +6,8 @@ import { FaSearch, FaBars, FaUser } from 'react-icons/fa'
 import { Button } from './Button/Button'
 import { auth } from './Services/initializeApp'
 import { useState, useEffect } from 'react'
+import Avatar from './Avatar'
+import face from '../assets/images/face.webp'
 
 const MainBox = styled.div`
   display: flex;
@@ -84,7 +86,7 @@ const Header = (props) => {
         }
       }>
         {
-          user ? <StyledNavLink id={id} to="/profile"><div className='account'><FaUser size={16} /></div></StyledNavLink> : <StyledNavLink id={id} to="/login"><div className='account'><Button location="/login" value="login" /></div></StyledNavLink>
+          user ? <StyledNavLink id={id} to="/profile"><div className='account'><Avatar img={face} size="40px"/></div></StyledNavLink> : <StyledNavLink id={id} to="/login"><div className='account'><Button location="/login" value="login" /></div></StyledNavLink>
         }
         <StyledNavLink id={id} to="/blog">Blog</StyledNavLink>
         <StyledNavLink id={id} to="/about">About</StyledNavLink>

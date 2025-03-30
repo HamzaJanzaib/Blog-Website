@@ -15,7 +15,7 @@ export default Input
 
 const InputBox = styled.div`
     width: 100%;
-    height: 100%;
+    height: fit-conten;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -29,5 +29,6 @@ const InputBox = styled.div`
         border: 1px solid #ccc;
         border-radius: 5px;
         padding: 0 10px;
+        outline : none;
     }
 `

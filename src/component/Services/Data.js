@@ -7,7 +7,6 @@ import blog6 from '../../assets/images/blog-6.webp'
 import blog7 from '../../assets/images/blog-7.webp'
 import blog8 from '../../assets/images/blog-8.webp'
 import blog9 from '../../assets/images/blog-9.webp'
-
 function Data( start, end) {
     const cardData = [
         {
@@ -97,3 +96,108 @@ function Data( start, end) {
 }
 
 export default Data
+// import { doc, getDoc, collection, query, where, getDocs } from 'firebase/firestore';
+// import { db,  addDoc } from './initializeApp'; // Adjust the import path as needed
+
+// // Your existing blog data
+// const cardData = [
+//   {
+//     id: 1,
+//     title: '8 Rules of Travelling In Sea You Need To Know',
+//     description: 'Travelling in sea has many advantages...',
+//     data: '13 March 2024',
+//     caterogorie: "Travel",
+//     image: 'blog1.webp', // Store the image path or URL
+//     contant: "Travelling by sea offers a unique and enriching experience...",
+//   },
+//   {
+//     id: 2,
+//     title: 'How to build strong portfolio and get a Job in UI/UX',
+//     description: 'Capitalize on low hanging fruit to identify a ballpark value added activity to beta test...',
+//     data: '11 March 2024',
+//     caterogorie: "DEVELOPMENT",
+//     image: 'blog2.webp',
+//     contant: "Building a strong portfolio is essential for getting a job in UI/UX design...",
+//   },
+//   {
+//     id: 3,
+//     title: 'How to Be a Professional Footballer in 2024',
+//     description: 'Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment...',
+//     data: '10 March 2024',
+//     caterogorie: "Sports",
+//     image: 'blog3.webp',
+//     contant: "Becoming a professional footballer in 2024 requires a combination of talent, dedication, and strategic planning...",
+//   },
+//   {
+//     id: 4,
+//     title: 'Train Or Bus Journey?Which one suits?',
+//     description: 'The choice between a train or bus journey depends on various factors such as the distance of the journey, the time available...',
+//     data: '13 March 2024',
+//     caterogorie: "Travel",
+//     image: 'blog4.webp',
+//     contant: "Choosing between train and bus travel requires careful consideration of various factors...",
+//   },
+//   {
+//     id: 5,
+//     title: 'Best Website to research for your next project',
+//     description: 'Capitalize on low hanging fruit to identify a ballpark value added activity to beta test...',
+//     data: '11 March 2024',
+//     caterogorie: "DEVELOPMENT",
+//     image: 'blog5.webp',
+//     contant: "Finding reliable research resources is crucial for project success...",
+//   },
+//   {
+//     id: 6,
+//     title: 'How to Be a Dancer in 2024 with proper skills?',
+//     description: 'Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment...',
+//     data: '10 March 2024',
+//     caterogorie: "Sports",
+//     image: 'blog6.webp',
+//     contant: "Becoming a skilled dancer in 2024 requires dedication, proper training, and a strategic approach...",
+//   },
+//   {
+//     id: 7,
+//     title: 'Who is the best singer on chart?Know him?',
+//     description: 'chart by Billboard which ranks the all-time greatest artists based on their performance on the weekly Billboard Hot 100...',
+//     data: '13 March 2024',
+//     caterogorie: "Travel",
+//     image: 'blog7.webp',
+//     contant: "Analyzing the best singers on music charts involves considering multiple factors and achievements...",
+//   },
+//   {
+//     id: 8,
+//     title: 'How to start export import business from home?',
+//     description: 'Capitalize on low hanging fruit to identify a ballpark value added activity to beta test...',
+//     data: '11 March 2024',
+//     caterogorie: "DEVELOPMENT",
+//     image: 'blog8.webp',
+//     contant: "Starting an export-import business from home requires careful planning and understanding of international trade...",
+//   }
+// ,
+//   {
+//     id: 9,
+//     title: 'Make some drinks with chocolates chocolates and milk',
+//     description: 'Organically grow the holistic world view of disruptive innovation via workplace diversity and empowerment...',
+//     data: '10 March 2024',
+//     caterogorie: "Sports",
+//     image: 'blog9.webp',
+//     contant: "Creating delicious chocolate milk drinks requires understanding ingredients, techniques, and flavor combinations...",
+//   },
+// ];
+
+// // Function to upload all blog data to Firestore
+// async function uploadBlogsToFirestore() {
+//   try {
+//     const blogsCollection = collection(db, 'blogs');
+//     for (const blog of cardData) {
+//       await addDoc(blogsCollection, blog);
+//       console.log(`Blog "${blog.title}" added to Firestore!`);
+//     }
+//     console.log('All blogs uploaded successfully!');
+//   } catch (error) {
+//     console.error('Error uploading blogs: ', error);
+//   }
+// }
+
+// // Call the function to upload data
+// uploadBlogsToFirestore();

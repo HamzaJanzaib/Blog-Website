@@ -7,8 +7,10 @@ import ErrorPage from './404'
 import Text from '../text'
 import Discribe from '../Discribe'
 import Card from '../Card'
+import { Comment } from '../Form/Comment';
 
 const Singleblog = () => {
+  
   const { id } = useParams()
   const cardData = Data(0, 9)
   const blog = cardData.find(blog => blog.id === parseInt(id))
@@ -25,7 +27,7 @@ const Singleblog = () => {
           <h1>{blog.title}</h1>
           <p className="description">{blog.description}</p>
         </div>
-            
+
         <Blogmainimage image={blog.image} height="70vh" />
         <div className="singleblog-content">
           <Text content={blog.contant} />
@@ -37,10 +39,11 @@ const Singleblog = () => {
           <Blogmainimage image={blog.image} height="40vh" />
           <Text content={blog.contant} />
         </div>
+
         <Discribe text="Popular Post" location="blog" value="View All" />
         <Box>
           {cardData.length > 3 ? cardData.slice(6, 9).map((card, index) => (
-            <Card 
+            <Card
               key={index}
               hadline={card.title}
               paragraph={card.description}
@@ -50,7 +53,7 @@ const Singleblog = () => {
               image={card.image}
             />
           )) : cardData.map((card, index) => (
-            <Card 
+            <Card
               key={index}
               hadline={card.title}
               paragraph={card.description}
@@ -62,6 +65,9 @@ const Singleblog = () => {
           ))}
         </Box>
       </div>
+      <Throw>
+        <Comment/>
+      </Throw>
     </SingleblogContainer>
   )
 }
@@ -114,4 +120,11 @@ const Box = styled.div`
     grid-template-columns: repeat(1, 1fr);
     padding: 2vh 2vw;
   }
+`
+const Throw = styled.div`
+padding: 2vw 10vw;
+height : 100%;
+max-height : 100vh;
+over-flow-y : auto;
+width: 100vw;
 `
